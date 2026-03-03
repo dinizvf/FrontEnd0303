@@ -4,12 +4,15 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-rl.question("Digite seu peso: " , (peso) => {
-    rl.question("Digite sua altura em metros" , (metros) => {
-        let n1 = Number (peso);
-        let n2 = Number (metros);
 
-        console.log ("\nResultado do IMC:");
-        console.log (((n1 / n2) * n2));  
+rl.question("Digite o dia da semana: ", (dia) => {
+    dia = dia.toLowerCase();
+
+    if (dia === "sábado" || dia === "domingo") {
+        console.log("É fim de semana");
+    } else {
+        console.log("Não é fim de semana");
     }
-    )})
+
+    rl.close();
+});

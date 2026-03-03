@@ -5,17 +5,22 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Digite o comprimento: ", (comprimento) => {
-    rl.question("Digite a largura: ", (largura) => {
-        rl.question("Digite a altura: ", (altura) => {
-            comprimento = Number(comprimento);
-            largura = Number(largura);
-            altura = Number(altura);
+rl.question("Menu:\n1 - Pizza\n2 - Hambúrguer\n3 - Salada\nEscolha uma opção: ", (input) => {
+    let opcao = Number(input);
 
-            let volume = comprimento * largura * altura;
+    switch (opcao) {
+        case 1:
+            console.log("Você escolheu Pizza 🍕");
+            break;
+        case 2:
+            console.log("Você escolheu Hambúrguer 🍔");
+            break;
+        case 3:
+            console.log("Você escolheu Salada 🥗");
+            break;
+        default:
+            console.log("Opção inválida.");
+    }
 
-            console.log("Volume da caixa: " + volume);
-            rl.close();
-        });
-    });
+    rl.close();
 });

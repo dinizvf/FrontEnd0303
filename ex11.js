@@ -5,14 +5,33 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Digite o consumo em kWh: ", (consumo) => {
-    rl.question("Digite o valor do kWh: ", (valorKwh) => {
-        consumo = Number(consumo);
-        valorKwh = Number(valorKwh);
+rl.question("Digite um número de 1 a 12: ", (input) => {
+    let mes = Number(input);
 
-        let total = consumo * valorKwh;
+    switch (mes) {
+        case 12:
+        case 1:
+        case 2:
+            console.log("Verão");
+            break;
+        case 3:
+        case 4:
+        case 5:
+            console.log("Outono");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            console.log("Inverno");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            console.log("Primavera");
+            break;
+        default:
+            console.log("Mês inválido.");
+    }
 
-        console.log("Total da conta: R$ " + total);
-        rl.close();
-    });
+    rl.close();
 });

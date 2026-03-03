@@ -5,17 +5,16 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Digite a primeira nota: ", (n1) => {
-    rl.question("Digite a segunda nota: ", (n2) => {
-        rl.question("Digite a terceira nota: ", (n3) => {
-            n1 = Number(n1);
-            n2 = Number(n2);
-            n3 = Number(n3);
+rl.question("Digite um número: ", (input) => {
+    let numero = Number(input);
 
-            let media = (n1 + n2 + n3) / 3;
+    if (numero > 0) {
+        console.log("Número positivo");
+    } else if (numero < 0) {
+        console.log("Número negativo");
+    } else {
+        console.log("Número igual a zero");
+    }
 
-            console.log("Média aritmética: " + media);
-            rl.close();
-        });
-    });
+    rl.close();
 });

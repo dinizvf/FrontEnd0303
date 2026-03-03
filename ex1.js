@@ -1,11 +1,18 @@
 const readline = require('readline');
 
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-r1.question('Qual seu nome de usuario?', (resposta) => {
-    console.log(`Seja bem-vindo, ${resposta}!`);
-    r1.close();
+rl.question("Digite o saldo da conta: ", (saldo) => {
+    saldo = Number(saldo);
+
+    if (saldo >= 0) {
+        console.log("Saldo positivo.");
+    } else {
+        console.log("Saldo negativo.");
+    }
+
+    rl.close();
 });
