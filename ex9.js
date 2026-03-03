@@ -1,0 +1,21 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Digite a primeira nota: ", (n1) => {
+    rl.question("Digite a segunda nota: ", (n2) => {
+        rl.question("Digite a terceira nota: ", (n3) => {
+            n1 = Number(n1);
+            n2 = Number(n2);
+            n3 = Number(n3);
+
+            let media = (n1*2 + n2*3 + n3*5) / 10;
+
+            console.log("Média ponderada: " + media);
+            rl.close();
+        });
+    });
+});
